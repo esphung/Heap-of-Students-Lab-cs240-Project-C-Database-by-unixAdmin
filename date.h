@@ -15,5 +15,4 @@ public:
 	Date(std::string date);// end overload constructor declarations
 	~Date();// end destructor
 };// end Date class
-
 #endif

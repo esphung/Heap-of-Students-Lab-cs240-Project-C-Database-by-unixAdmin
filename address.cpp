@@ -4,18 +4,14 @@
 * @Last Modified by:   Eric Phung
 */
 #include <iostream>
-//#include <string>
 #include "address.h"
-Address::Address(){
-	//cout << "Hello: Address(with nuffin')" << endl;
-}// end null
+Address::Address(){}// end null
 Address::Address(std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode){
-	/* inherited vars */
+	/* vars */
 	Address::first_address = first_address;
 	Address::second_address = second_address;
 	Address::city = city;
 	Address::state = state;
 	Address::zipcode = zipcode;
-
 }// end overload
 Address::~Address(){}// end destructor
