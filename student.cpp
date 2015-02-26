@@ -26,9 +26,6 @@ Student::Student(string last_name, string first_name, string first_address, stri
 	Student::gpa = gpa;
 	Student::credit_hours = credit_hours;
 
-
-
-
 	std::cout << "  ========================" << std::endl;
 	std::cout << "\t" << first_name << " " << last_name << " was found." << std::endl;
 	displayData();
