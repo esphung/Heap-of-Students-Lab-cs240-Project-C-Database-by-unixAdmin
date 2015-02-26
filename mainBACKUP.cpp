@@ -45,6 +45,7 @@ void buildDatabase(string databaseFile, int lineCount){
 	string completion_date;
 	string gpa;
 	string credit_hours;
+	int count = 0;// count the lines
 
 	string line;
 	int vectorReduced;
@@ -60,9 +61,29 @@ void buildDatabase(string databaseFile, int lineCount){
 				}// end while
 				// created new student object on the heap
 				vectorReduced = (((myVector.size())/(10))-(1));
-				//cout << "vectorSize reduced " << vectorReduced << endl;
+//				cout << "vectorSize reduced " << vectorReduced << endl;
 					Student *student = new Student(myVector.at(i), myVector.at(i+1), myVector[i+2], myVector[i+3], myVector[i+4], myVector[i+5], myVector[i+6], myVector[i+7], myVector[i+8], myVector[i+9], "null!!!");
 					i = i+10;
+					//cout << "ACTUAL VECTOR SIZE: " << myVector.size() << endl;
+
+					// TEMPORARY if statement;
+					/*
+					if (i > 0){
+						i = i + 10;
+						count++;
+						std::cout << "Entries found:\t" << count << std::endl;
+					}// end if
+					*/
+					/*else{
+						i++;
+					}// end else
+					*/
+					// make last calls, then destroy student
+					cout << "Address (main):\t" << student[0].addressObject.first_address << endl;
+					cout << "Address:\t" << student[0].addressObject.second_address << endl;
+					cout << "City\t\t" << student[0].addressObject.city << endl;
+					cout << "State:\t\t" << student[0].addressObject.state << endl;
+					cout << "Zipcode:\t" << student[0].addressObject.zipcode << endl;
 					cout << "DOB:\t\t" << student[0].birthdayObject.date << endl;
 					cout << "Graduate:\t" << student[0].completionObject.date << endl;
 					// DELETE HEAP STUDENT HERE!!!

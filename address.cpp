@@ -1,17 +1,15 @@
-/*
+/* address.cpp
 * @Author: Eric Scott Phung
 * @Date:   2015-02-25 14:44:54
-* @Last Modified by:   home
+* @Last Modified by:   Eric Phung
 */
 #include <iostream>
-#include <string>
+//#include <string>
 #include "address.h"
-using namespace std;
-
 Address::Address(){
 	//cout << "Hello: Address(with nuffin')" << endl;
 }// end null
-Address::Address(string first_address, string second_address, string city, string state, string zipcode){
+Address::Address(std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode){
 	/* inherited vars */
 	Address::first_address = first_address;
 	Address::second_address = second_address;
