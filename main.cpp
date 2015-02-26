@@ -28,7 +28,7 @@ int main(){
 }// end main
 void getData(std::string databaseFile){
 	std::string line;
-	std::ifstream myfile(databaseFile);
+	std::ifstream myfile(databaseFile.c_str());
 	if(myfile.is_open()){
 		while(getline(myfile, line)){
 			while ((pos = line.find(delimiter)) != std::string::npos) {
