@@ -7,53 +7,48 @@
 #include "date.h"
 using namespace std;
 // prototype functions
-void buildDatabase(string databaseFile, int);// pass data to student constructor
-int getLineCount(string);// get line count from file
+void buildDatabase(std::string databaseFile, int);// pass data to student constructor
+int getLineCount(std::string);// get line count from file
 // main method var declarations
 vector<string> myVector;
-size_t pos;// position in token
-string item;// variable store token
-string delimiter = (",");
+std::size_t pos;// position in token
+std::string item;// variable store token
+std::string delimiter = (",");
+std::string databaseFile;
 int i;
-string databaseFile;
+
 
 int main(){
 
-
 	databaseFile = ("data.dat");
 	buildDatabase(databaseFile, getLineCount(databaseFile));// build students
-
-	cout << getLineCount(databaseFile) << endl;// get lines in text file
-
-
-
-
+	std::cout << getLineCount(databaseFile) << std::endl;// get lines in text file
 
 
 	return 0;
 }// end main
 
-void buildDatabase(string databaseFile, int lineCount){
-	string last_name;
-	string first_name;
-	string first_address;
-	string second_address;
-	string city;
-	string state;
-	string zipcode;
-	string birthday_date;
-	string completion_date;
-	string gpa;
-	string credit_hours;
+void buildDatabase(std::string databaseFile, int lineCount){
+	std::string last_name;
+	std::string first_name;
+	std::string first_address;
+	std::string second_address;
+	std::string city;
+	std::string state;
+	std::string zipcode;
+	std::string birthday_date;
+	std::string completion_date;
+	std::string gpa;
+	std::string credit_hours;
 
-	string line;
+	std::string line;
 	int vectorReduced;
 	ifstream myfile(databaseFile);
 	if(myfile.is_open()){
 		while(getline(myfile, line)){
 		//while(getline(myfile, line, '\n'))
 			try {
-				while ((pos = line.find(delimiter)) != string::npos) {
+				while ((pos = line.find(delimiter)) != std::string::npos) {
 					item = line.substr(0, pos);
 					myVector.push_back(item);
 					line.erase(0, pos + delimiter.length());
@@ -61,15 +56,15 @@ void buildDatabase(string databaseFile, int lineCount){
 				// created new student object on the heap
 				vectorReduced = (((myVector.size())/(10))-(1));
 				//cout << "vectorSize reduced " << vectorReduced << endl;
-					Student *student = new Student(myVector.at(i), myVector.at(i+1), myVector[i+2], myVector[i+3], myVector[i+4], myVector[i+5], myVector[i+6], myVector[i+7], myVector[i+8], myVector[i+9], "null!!!");
+				Student *student = new Student(myVector.at(i), myVector.at(i+1), myVector[i+2], myVector[i+3], myVector[i+4], myVector[i+5], myVector[i+6], myVector[i+7], myVector[i+8], myVector[i+9], "null!!!");
 					i = i+10;
-					cout << "DOB:\t\t" << student[0].birthdayObject.date << endl;
-					cout << "Graduate:\t" << student[0].completionObject.date << endl;
+					std::cout << "DOB:\t\t" << student[0].birthdayObject.date << std::endl;
+					std::cout << "Graduate:\t" << student[0].completionObject.date << std::endl;
 					// DELETE HEAP STUDENT HERE!!!
 					delete student;
 			}// end try statement
 			catch(const std::exception& e) {
-				std::cout << "Uh oh. File format may be incorrect" << endl;
+				std::cout << "Uh oh. File format may be incorrect" << std::endl;
 			}// end catch
 		}// end while(GETLINE)
 		myfile.close();
@@ -79,10 +74,10 @@ void buildDatabase(string databaseFile, int lineCount){
 
 
 // method to count lines in file
-int getLineCount(string databaseFile){
+int getLineCount(std::string databaseFile){
 	int lineCount = 0;
 		// get text lines from file
-	string line;
+	std::string line;
 	ifstream myfile (databaseFile);
 	if(myfile.is_open()){
 		while(getline(myfile, line, '\n')){
@@ -90,10 +85,6 @@ int getLineCount(string databaseFile){
 		}// end while
 		myfile.close();
 	}// end for
-	else cout << "Could not open file" << endl;
+	else std::cout << "Could not open file" << std::endl;
 	return lineCount;
 }// end getLineCount
-
-
-
-
