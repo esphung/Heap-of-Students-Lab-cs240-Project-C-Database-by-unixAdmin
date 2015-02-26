@@ -46,7 +46,7 @@ void getData(std::string databaseFile){
 int getLineCount(std::string databaseFile){
 	int lineCount = 0;
 	std::string line;
-	std::ifstream myfile (databaseFile);
+	std::ifstream myfile (databaseFile.c_str());
 	if(myfile.is_open()){
 		while(getline(myfile, line, '\n')){
 			lineCount++;
