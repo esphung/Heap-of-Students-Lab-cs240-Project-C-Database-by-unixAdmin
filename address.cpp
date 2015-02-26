@@ -1,24 +1,23 @@
 /*
-* @Author: home
+* @Author: Eric Scott Phung
 * @Date:   2015-02-25 14:44:54
 * @Last Modified by:   home
-* @Last Modified time: 2015-02-25 15:10:39
 */
 #include <iostream>
+#include <string>
 #include "address.h"
 using namespace std;
-int main(){
-	// test unit vars
-	string first_address = "4756 Mapleview Drive";
-	string second_address = "Apt Hello World";
-	string city = "Ripley";
-	string state = "TN";
-	string zipcode = "38063";
 
-		Address newAddress = Address(first_address, second_address, city, state, zipcode);
+Address::Address(){
+	//cout << "Hello: Address(with nuffin')" << endl;
+}// end null
+Address::Address(string first_address, string second_address, string city, string state, string zipcode){
+	/* inherited vars */
+	Address::first_address = first_address;
+	Address::second_address = second_address;
+	Address::city = city;
+	Address::state = state;
+	Address::zipcode = zipcode;
 
-
-
-
-    return 0;
-}
+}// end overload
+Address::~Address(){}// end destructor

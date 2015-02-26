@@ -12,29 +12,17 @@
 using namespace std;
 
 class Address{
-private:
+public:
 	string first_address;
 	string second_address;
 	string city;
 	string state;
 	string zipcode;
+	Address();// null declaration
+	Address(string first_address, string second_address, string city, string state, string zipcode);// overload declaration
+	~Address();// destructor declaration
 
-public:
-	Address(){
-		cout << "Hello: Address(with nuffin')" << endl;
-	}// end null
-
-	Address(string first_address, string second_address, string city, string state, string zipcode){
-		cout << "Hello Address(with stuff)" << endl;
-		cout << first_address << endl;
-		cout << second_address << endl;
-	}// end overload
-
-	/* DESTRUC-TOR!!! */
-	~Address(){
-	}// end destructor
-
-        /* Public Address methods */
+	/* Public Address methods */
 
 };// end Address class
 

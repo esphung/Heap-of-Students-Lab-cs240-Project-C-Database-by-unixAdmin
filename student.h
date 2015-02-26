@@ -2,6 +2,7 @@
 #define STUDENT_EXISTS
 
 #include "date.h"
+#include "address.h"
 
 #include <iostream>
 #include <string>
@@ -28,6 +29,7 @@ public:
 	// date instantiation on stack for students
 	Date birthdayObject;
 	Date completionObject;
+	Address addressObject;
 
 	~Student();// destructor
 

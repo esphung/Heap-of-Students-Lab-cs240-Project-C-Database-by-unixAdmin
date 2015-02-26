@@ -1,22 +1,31 @@
-all: main.o student.o date.o
-	g++ main.o student.o date.o -o databaseProgram
+#address: address.cpp address.h
+#	g++ address.cpp -o address.out
+#	./address.out
+
+all: main.o student.o date.o address.o
+	g++ main.o student.o date.o address.o -o databaseProgram
 	#PROGRAM BUILD COMPLETE
 
 run:
 	./databaseProgram
 
-
-main.o: main.cpp student.h date.h
+main.o: main.cpp student.h date.h address.h
 	g++ -c main.cpp
-	#MAIN DEPENDENCIES BUILT
+	#CHECKING FOR DEPENDENCIES
 
-student.o: student.cpp student.h date.cpp date.h
+student.o: student.cpp student.h date.cpp date.h address.cpp address.h
 	g++ -c student.cpp
-	#STUDENT DEPENDENCIES
+	#CREATING STUDENT CLASS FILES
 
 date.o: date.cpp date.h
 	g++ -c date.cpp
-	#CREATED DATE DEPENDENCIES
+	#CREATING DATE CLASS FILES
+
+address.o: address.cpp address.h
+	g++ -c address.cpp
+	#CREATING ADDRESS CLASS FILES
+
+
 
 
 clean:

@@ -70,9 +70,14 @@ void getData(string databaseFile){
 					}// end else
 					*/
 					// make last calls, then destroy student
-
+					cout << "Address (main):\t" << student[0].addressObject.first_address << endl;
+					cout << "Address:\t" << student[0].addressObject.second_address << endl;
+					cout << "City\t\t" << student[0].addressObject.city << endl;
+					cout << "State:\t\t" << student[0].addressObject.state << endl;
+					cout << "Zipcode:\t" << student[0].addressObject.zipcode << endl;
 					cout << "DOB:\t\t" << student[0].birthdayObject.date << endl;
 					cout << "Graduate:\t" << student[0].completionObject.date << endl;
+
 
 					// DELETE HEAP STUDENT HERE!!!
 					delete student;
