@@ -6,6 +6,7 @@
 #include <vector>
 #include <fstream>
 #include "student.h"
+#include <iostream>
 // prototype functions
 void getData(std::string databaseFile);// pass data to student constructor
 int getLineCount(std::string);// get line count from file
