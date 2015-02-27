@@ -8,8 +8,11 @@
 #include "date.h"
 #include "address.h"
 #include <iostream>
+#include <vector>
 class Student{
 private:
+
+public:
 	std::string last_name;
 	std::string first_name;
 	std::string first_address;
@@ -21,9 +24,8 @@ private:
 	std::string completion_date;
 	std::string gpa;
 	std::string credit_hours;
-public:
 	Student();
-	Student(std::string last_name, std::string first_name, std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode, std::string birthday_date, std::string completion_date, std::string gpa, std::string credit_hours);
+	Student(std::vector<std::string>);
 	// date and address instantiation
 	Date birthdayObject;
 	Date completionObject;

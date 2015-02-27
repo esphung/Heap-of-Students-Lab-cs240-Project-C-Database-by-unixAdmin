@@ -7,25 +7,74 @@
 #include <fstream>
 #include "student.h"
 #include <iostream>
+
+
+#include <string>
+using namespace std;
+
 // prototype functions
-void getData(std::string databaseFile);// pass data to student constructor
-int getLineCount(std::string);// get line count from file
-void setStudent(std::string last_name, std::string first_name, std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode, std::string birthday_date, std::string completion_date, std::string gpa, std::string credit_hours);// set new student object information
+Student student(string myKeysVector);
+//void getData(std::string databaseFile);// pass data to student constructor
+//int getLineCount(std::string);// get line count from file
+//void setStudent(std::string last_name, std::string first_name, std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode, std::string birthday_date, std::string completion_date, std::string gpa, std::string credit_hours);// set new student object information
 // main method var declarations
 std::size_t pos;// position in token
 std::string item;// variable store token
 std::string delimiter = (",");
 std::string databaseFile;
 std::string line;
-std::vector<std::string> myVector;
+std::vector<std::string> myVector(0);
 int i;
+
+string argument = "Hello World";
+std::vector<std::string> myKeysVector(0);
+
+
+string getData(string databaseFile){
+	std::string line;
+	std::ifstream myfile(databaseFile.c_str());
+	if(myfile.is_open()){
+		while(getline(myfile, line)){
+			while ((pos = line.find(delimiter)) != std::string::npos) {
+					item = line.substr(0, pos);
+					myVector.push_back(item);
+					line.erase(0, pos + delimiter.length());
+					cout << myVector.size() << endl;
+				}// end while getline()
+				cout << myVector.size() << endl;
+				// vector +10 HERE COPIED TO KEYS!!! ==========
+				myKeysVector.insert(myKeysVector.begin(), myVector.begin(), myVector.end());// YES INSERTINO OF KEYS!
+				// nOW TO JOIN THEM, ONE to MANY!
+				//cout << "CAPACITY KEYS VEC" << myKeysVector.capacity() << endl;
+				//cout << "CAPACITY True VEC" << myVector.capacity() << endl;
+				break;
+		}// end while
+	}// end if
+	cout << "(DEBUG) HEAP VEC SIZE: " << myVector.size() << endl;
+	cout << "(DEBUG) EXPLICIT KEY VEC: " << myKeysVector.size() << endl;
+	return argument;
+}; // end get data function
 
 int main(){
 	databaseFile = ("data.dat");
-	getData(databaseFile);// build database AND returns number of datum found
-	std::cout << getLineCount(databaseFile) << std::endl;// display lines in text file
+
+	getData(databaseFile);
+	Student *studentObject = new Student(myKeysVector);
+	delete studentObject;
+
+
+
+
+
+
+	//getData(databaseFile);// build database AND returns number of datum found
+	//std::cout << getLineCount(databaseFile) << std::endl;// display lines in text file
+
+
 	return 0;
 }// end main
+
+/*******
 void getData(std::string databaseFile){
 	std::string line;
 	std::ifstream myfile(databaseFile.c_str());
@@ -62,3 +111,5 @@ void setStudent(std::string last_name, std::string first_name, std::string first
 	std::cout << "Graduate:\t" << setStudents[0].completionObject.date << std::endl;
 	delete setStudents;
 }// end set student method
+
+*******/
