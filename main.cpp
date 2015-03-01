@@ -26,46 +26,86 @@ std::string line;
 std::vector<std::string> myVector(0);
 int i;
 
+
+
 string argument = "Hello World";
 std::vector<std::string> myKeysVector(0);
 
 
-string getData(string databaseFile){
+void getData(string databaseFile){
 	std::string line;
 	std::ifstream myfile(databaseFile.c_str());
 	if(myfile.is_open()){
 		while(getline(myfile, line)){
-			while ((pos = line.find(delimiter)) != std::string::npos) {
+			while ((pos = line.find(",")) != std::string::npos) {
 					item = line.substr(0, pos);
 					myVector.push_back(item);
-					line.erase(0, pos + delimiter.length());
-					cout << myVector.size() << endl;
+                    //cout << myVector[i] << endl;
+					// the entries were being erased here!!!
+                    line.erase(0, pos + delimiter.length());
+					cout << line << endl;
+					cout << "==============" << endl;
+                    cout << "Feed from line --> " << item << endl;
+                    cin.ignore();// before transfer
+                    
+                    std::vector<int>::iterator j;
+                    for(int j = 0; j <= line.size(); j++){
+                        //myVector.clear();
+                        cout << "Last element in VECTOR --> " << myVector.back() << endl;
+                        cout << "Should end at credit_hours)" << endl;
+                       
+                        if(i == 10){
+                            myVector.clear();// wipe the vector
+                            cout << "Cleared Vector, Back = " << myVector.back() << " and front == " << myVector.front() << "\n" << endl;
+                            cout << "Vector capacity is now : " << myVector.capacity() << endl;
+                            myVector.swap(myKeysVector);
+                        }// clear the vector and reinit
+
+
+
+                        break;
+                    }// break out, else will be coppied 10 times
+
+                    cin.ignore();// after transfer
+                    cout << "First element in VECTOR --> " << myVector.front() << endl;
+
+                    cin.ignore();//
+                    
+                    //cout << myVector.size() << endl;
 				}// end while getline()
-				cout << myVector.size() << endl;
+				//cout << line << endl;
 				// vector +10 HERE COPIED TO KEYS!!! ==========
 				myKeysVector.insert(myKeysVector.begin(), myVector.begin(), myVector.end());// YES INSERTINO OF KEYS!
 				// nOW TO JOIN THEM, ONE to MANY!
 				//cout << "CAPACITY KEYS VEC" << myKeysVector.capacity() << endl;
 				//cout << "CAPACITY True VEC" << myVector.capacity() << endl;
-				break;
+				//break;
 		}// end while
 	}// end if
 	cout << "(DEBUG) HEAP VEC SIZE: " << myVector.size() << endl;
 	cout << "(DEBUG) EXPLICIT KEY VEC: " << myKeysVector.size() << endl;
-	return argument;
+	for(int i = 0; i < myVector.size(); i++) {
+        cout << myVector.at(i) << endl;        
+    };// end log iterloop)
 }; // end get data function
+
+
+
 
 int main(){
 	databaseFile = ("data.dat");
 
+
 	getData(databaseFile);
-	Student *studentObject = new Student(myKeysVector);
-	delete studentObject;
+	//Student *studentObject = new Student();
+	//studentObject[0] = Student(myKeysVector);
+    Student student;
 
 
 
 
 
+	//delete studentObject;
 
 	//getData(databaseFile);// build database AND returns number of datum found
 	//std::cout << getLineCount(databaseFile) << std::endl;// display lines in text file
@@ -73,43 +113,3 @@ int main(){
 
 	return 0;
 }// end main
-
-/*******
-void getData(std::string databaseFile){
-	std::string line;
-	std::ifstream myfile(databaseFile.c_str());
-	if(myfile.is_open()){
-		while(getline(myfile, line)){
-			while ((pos = line.find(delimiter)) != std::string::npos) {
-				item = line.substr(0, pos);
-				myVector.push_back(item);
-				line.erase(0, pos + delimiter.length());
-			}// end while
-			setStudent(myVector.at(i), myVector.at(i+1), myVector[i+2], myVector[i+3], myVector[i+4], myVector[i+5], myVector[i+6], myVector[i+7], myVector[i+8], myVector[i+9], "10");
-			i = i+10;
-		}// end while(GETLINE())
-		myfile.close();
-	}// end if statement
-}// end get data method
-// method to count lines in file
-int getLineCount(std::string databaseFile){
-	int lineCount = 0;
-	std::string line;
-	std::ifstream myfile (databaseFile.c_str());
-	if(myfile.is_open()){
-		while(getline(myfile, line, '\n')){
-			lineCount++;
-		}// end while
-		myfile.close();
-	}// end for
-	else std::cout << "Could not open file" << std::endl;
-	return lineCount;
-}// end getLineCount
-void setStudent(std::string last_name, std::string first_name, std::string first_address, std::string second_address, std::string city, std::string state, std::string zipcode, std::string birthday_date, std::string completion_date, std::string gpa, std::string credit_hours){
-	Student *setStudents = new Student(myVector.at(i), myVector.at(i+1), myVector[i+2], myVector[i+3], myVector[i+4], myVector[i+5], myVector[i+6], myVector[i+7], myVector[i+8], myVector[i+9], "10");
-	std::cout << "DOB:\t\t" << setStudents[0].birthdayObject.date << std::endl;
-	std::cout << "Graduate:\t" << setStudents[0].completionObject.date << std::endl;
-	delete setStudents;
-}// end set student method
-
-*******/

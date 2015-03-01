@@ -25,7 +25,7 @@ Student::Student(std::vector<std::string> myKeysVector){
 	Student::birthday_date = myKeysVector.at(7);
 	Student::completion_date = myKeysVector.at(8);
 	Student::gpa = myKeysVector.at(9);
-	Student::credit_hours = myKeysVector.at(9);
+	//Student::credit_hours = myKeysVector.at(9);
 	std::cout << "  ========================" << std::endl;
 	std::cout << "\t" << myKeysVector.at(1) << " " << myKeysVector.at(0) << " was found." << std::endl;
 	displayData();

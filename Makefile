@@ -15,6 +15,10 @@ date.o: date.cpp date.h
 address.o: address.cpp address.h
 	g++ -c address.cpp
 	#CREATING ADDRESS CLASS FILES
+
+vector:
+	g++ vector.cpp
+	./a.out
 clean:
 	rm -rf *.out
 	rm -rf *.o
