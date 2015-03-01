@@ -18,10 +18,11 @@ public:
 	{
 		return new_data[index];
 	}
-	std::size_t size() const
-	{
+	std::size_t size() const{
 		return new_data.size();
 	}
+
+
 	void readNextLine(std::istream& str)
 	{
 		std::string 			line;
@@ -55,7 +56,7 @@ int main()
 {
 	string databaseFile			=	"data.dat";
 
-	std::ifstream							file(databaseFile);
+	std::ifstream							file("data.dat");
 
 	TextInfo									row;
 	while(file >> row)
@@ -78,55 +79,5 @@ int main()
 
 	*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	//=================================================
-	//vector<string> stringVector;
-
-
-	/* myVector.push_back(value)
-	>>> adds element to the END of the vector
-	AND (also) resizes the vector
-	*/
-
-	// read a vector
-	/*
-	myVector.at(index)
-	>>> returns element at a specified index number
-	*/
-
-	//stringVector.push_back("John");
-	//stringVector.push_back("Doe");
-
-	//cout << "myVector items:\t\n";
-	//for (unsigned int i = 0; i < stringVector.size(); i++){
-		//cout << stringVector.at(i) << endl;
-		//cout << myVector[i] << endl;;
-	//}// end for
-
-
-
-
-
-
-
-
-
-
-	//cout << "Hello Vector" << endl;
 	return 0;
 }// end main
