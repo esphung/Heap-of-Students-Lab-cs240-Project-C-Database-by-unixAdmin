@@ -25,7 +25,7 @@ public:
 	std::string completion_date;
 	std::string gpa;
 	std::string credit_hours;
-	TextInfo::TextInfo row;
+	TextInfo row;
 
 	Student();
 
