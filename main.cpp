@@ -17,8 +17,11 @@
 
 #include <string>
 using namespace std;
+// function prototypes
+std::vector<std::string> getNamesAlphabetical();
+std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str);
 
-
+// global vars
 std::string 				line;
 std::stringstream 	sline;
 std::string 				var;
@@ -28,47 +31,18 @@ std::vector<string> nameVector;
 std::vector<Student> studentVector;
 
 
-std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
-	std::vector<std::string>   result;
-	std::string                line;
-	std::getline(str,line);
-
-	std::stringstream          lineStream(line);
-	std::string                cell;
-
-	while(std::getline(lineStream,cell,',')){
-	    result.push_back(cell);
-	} // end while
-	return result;
-} // end getline and tokenize function
-
-
-
-
-void getNamesAlphabetical(){
-	// for loop for sorting alphabetical
-	for (int i = 1; i < studentVector.size(); ++i){
-		//cout << "Student (" << i << "): ";
-		nameVector.push_back(studentVector[i].last_name);
-		//cout << nameVector.back() << endl;
-	} // end for stuff name vector
-	sort(nameVector.begin(), nameVector.end());
-	for (int i = 0; i < nameVector.size(); ++i){
-		cout << nameVector[i] << endl;
-	} // end for sort print out
-} // end get names ALPHABETIZED!!!
 
 
 
 
 
-
+/* main code */
 int main(){
 	file.open("data.dat"); // open file
 	Student *newStudent = new Student[51]; // heap of students
 
 
-	int i = 0; // iterator count for file
+	int i = 0; // iterator for line count
 	while (!file.eof()){
 		myVector = getNextLineAndSplitIntoTokens(file);
 		newStudent[i] = Student(myVector); // build student for heap array
@@ -87,20 +61,49 @@ int main(){
 	} // end for
 
 
+	getNamesAlphabetical(); // alphabetize names
 
 
 
 
-	delete[] newStudent;
 
-
-
+	delete[] newStudent; // deallocated memory
 
 	return 0; // return for main
 }// end main
 
 
+// function defs
+
+std::vector<std::string> getNamesAlphabetical(){
+	// for loop for sorting alphabetical
+	std::vector<std::string>   sortedNames;
+	for (int i = 1; i < studentVector.size(); ++i){
+		//cout << "Student (" << i << "): ";
+		nameVector.push_back(studentVector[i].last_name);
+		//cout << nameVector.back() << endl;
+	} // end for stuff name vector
+	sort(nameVector.begin(), nameVector.end());
+	for (int i = 0; i < nameVector.size(); ++i){
+		cout << nameVector[i] << endl;
+	} // end for sort print out
+	return sortedNames;
+} // end get names ALPHABETIZED!!! def
 
 
+
+std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
+	std::vector<std::string>   result;
+	std::string                line;
+	std::getline(str,line);
+
+	std::stringstream          lineStream(line);
+	std::string                cell;
+
+	while(std::getline(lineStream,cell,',')){
+	    result.push_back(cell);
+	} // end while
+	return result;
+} // end getline and tokenize function def
 
 
