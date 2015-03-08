@@ -13,7 +13,7 @@ Student::Student(){
 }// end null student constructor
 
 Student::Student(std::vector<std::string> rawInfo){
-	std::cout << "Student Created: " << std::endl;
+	//std::cout << "Student Created: " << std::endl;
 	//std::cout << rawInfo.back() << std::endl;
 
 	last_name = rawInfo[0];
@@ -35,7 +35,7 @@ Student::Student(std::vector<std::string> rawInfo){
 	completionObject = Date(rawInfo[8]); // create date object
 
 
-	displayData();
+	//displayNames();
 
 } // end overload
 
@@ -43,9 +43,8 @@ Student::Student(std::vector<std::string> rawInfo){
 Student::~Student(){}// end student destructor
 
 
-
-// define public methods of student
-void Student::displayData(){
+void Student::getReport(){
+	std::cout << "Getting report... " << std::endl;
 	std::cout << "Last:\t\t" << last_name << std::endl;
 	std::cout << "First:\t\t" << first_name << std::endl;
 	std::cout << "Address:\t" << addressObject.first_address << std::endl;
@@ -57,4 +56,11 @@ void Student::displayData(){
 	std::cout << "Credit Hours:\t" << credit_hours << std::endl;
 	std::cout << "Birthday:\t" << birthdayObject.date << std::endl;
 	std::cout << "Completion:\t" << completionObject.date << std::endl;
+
+} // end get report
+
+
+// define public methods of student
+void Student::displayNames(){
+	std::cout << last_name << ", " << first_name << std::endl;
 }// end display method

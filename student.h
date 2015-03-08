@@ -12,9 +12,6 @@
 #include <vector>
 class Student{
 private:
-	/* LACED */
-	std::string last_name;
-	std::string first_name;
 	std::string first_address;
 	std::string second_address;
 	std::string city;
@@ -31,9 +28,10 @@ private:
 	Address addressObject;
 
 public:
-		Student();
-		//Student(TextInfo::TextInfo&);
-		Student(std::vector<std::string> rawInfo);
+	std::string last_name;
+	std::string first_name;
+	Student();
+	Student(std::vector<std::string> rawInfo);
 
 
 
@@ -46,6 +44,7 @@ public:
 
 */
 	~Student();// destructor
-	void displayData();// public method declaration
+	void displayNames();// public method declaration
+	void getReport();
 };// end student class
 #endif
