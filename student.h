@@ -7,13 +7,12 @@
 #define STUDENT_EXISTS
 #include "date.h"
 #include "address.h"
-#include "database.h"
+//#include "database.h"
 #include <iostream>
 #include <vector>
 class Student{
 private:
-
-public:
+	/* LACED */
 	std::string last_name;
 	std::string first_name;
 	std::string first_address;
@@ -25,14 +24,17 @@ public:
 	std::string completion_date;
 	std::string gpa;
 	std::string credit_hours;
-	TextInfo row;
+	//TextInfo row;
 
-	Student();
-
-	Student(TextInfo::TextInfo&);
 	Date birthdayObject;
 	Date completionObject;
 	Address addressObject;
+
+public:
+		Student();
+		//Student(TextInfo::TextInfo&);
+		Student(std::vector<std::string> rawInfo);
+
 
 
 /*

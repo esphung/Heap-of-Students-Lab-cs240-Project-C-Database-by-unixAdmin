@@ -4,8 +4,7 @@
 
 
 // class to stream info into the student constructor
-class TextInfo
-{
+class TextInfo{
 private:
 	// vector is private member or TextInfo
 	std::vector<std::string> new_data;
