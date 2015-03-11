@@ -1,11 +1,13 @@
 /* student.cpp
 * @Author: Eric Scott Phung
 * @Date:   2015-02-25 14:44:54
-* @Last Modified by:   Eric Phung
+* @Last Modified by:   home
 */
 #include <vector>
 #include <string>
 #include "student.h"
+// global decs
+//std::vector<std::string> myDate;
 
 
 Student::Student(){
@@ -23,19 +25,23 @@ Student::Student(std::vector<std::string> rawInfo){
 	city = rawInfo[4];
 	state = rawInfo[5];
 	zipcode = rawInfo[6];
-	birthday_date = rawInfo[7];
-	completion_date = rawInfo[8];
+	//birthday_date = rawInfo[7];
+	//completion_date = rawInfo[8];
+
 	gpa = rawInfo[9];
 	credit_hours = rawInfo[10];
 
 	// Each Student object contains one address object
-	addressObject = Address(rawInfo[2],rawInfo[3],rawInfo[4],rawInfo[5],rawInfo[6]); // pass row of data from file as args to constructor
+	addressObject = Address(rawInfo[2],rawInfo[3],rawInfo[4],rawInfo[5],rawInfo[6]);
 	// student has 2 date objects
-	birthdayObject = Date(rawInfo[7]); // create birthday object
-	completionObject = Date(rawInfo[8]); // create date object
+	birthdayObject = Date(rawInfo[7]);
+	completionObject = Date(rawInfo[8]);
+
 
 
 	//displayNames();
+
+
 
 } // end overload
 
@@ -54,8 +60,8 @@ void Student::getReport(){
 	std::cout << "Zipcode:\t" << addressObject.zipcode << std::endl;
 	std::cout << "Grade:\t\t" << gpa << std::endl;
 	std::cout << "Credit Hours:\t" << credit_hours << std::endl;
-	std::cout << "Birthday:\t" << birthdayObject.date << std::endl;
-	std::cout << "Completion:\t" << completionObject.date << std::endl;
+	std::cout << "Birthday:\t" << birthdayObject.day + "/" + birthdayObject.month + "/" + birthdayObject.year << std::endl;
+	std::cout << "Completion:\t" << completionObject.day + "/" + completionObject.month + "/" + completionObject.year << std::endl;
 
 } // end get report
 

@@ -1,7 +1,7 @@
 /* main.cpp
 * @Author: Eric Scott Phung
 * @Date:   2015-02-25 14:44:54
-* @Last Modified by:   Eric Phung
+* @Last Modified by:   home
 */
 
 #include <iterator>
@@ -53,15 +53,15 @@ int main(){
 	} // end while
 	file.close(); // close file
 
-
+/*
 	// using heap array!!!
 	for (int i = 1; i < 51; ++i){
 		cout << "Student (" << i << "): ";
 		newStudent[i].displayNames();
 	} // end for
+*/
 
-
-	getNamesAlphabetical(); // alphabetize names
+	//getNamesAlphabetical(); // alphabetize names
 
 
 
@@ -101,7 +101,7 @@ std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
 	std::string                cell;
 
 	while(std::getline(lineStream,cell,',')){
-	    result.push_back(cell);
+		result.push_back(cell);
 	} // end while
 	return result;
 } // end getline and tokenize function def

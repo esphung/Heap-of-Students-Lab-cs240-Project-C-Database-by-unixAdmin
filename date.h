@@ -6,13 +6,23 @@
 #ifndef DATE_EXISTS
 #define DATE_EXISTS
 #include <string>
+#include <vector>
 class Date{
 public:
+
+	std::vector<std::string> myDate;
+	std::string rawInfo;
 	std::string date;
-	std::string birthday_date;
-	std::string completion_date;
+	std::string day;
+	std::string month;
+	std::string year;
+	std::string token;
+
+
 	Date();// end null
-	Date(std::string date);// end overload constructor declarations
+	Date(std::string rawInfo);// end overload constructor declarations
 	~Date();// end destructor
+
+
 };// end Date class
 #endif

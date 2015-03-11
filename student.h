@@ -21,8 +21,9 @@ private:
 	std::string completion_date;
 	std::string gpa;
 	std::string credit_hours;
-	//TextInfo row;
 
+
+	//std::vector<std::string> myDate;
 	Date birthdayObject;
 	Date completionObject;
 	Address addressObject;
