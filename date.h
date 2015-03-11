@@ -15,6 +15,8 @@ private:
 	std::vector<std::string> myDate;
 public:
 
+
+
 	Date();// end null
 	Date(std::string rawInfo);// end overload constructor declarations
 	~Date();// end destructor

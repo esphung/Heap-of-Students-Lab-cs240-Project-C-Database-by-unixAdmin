@@ -34,10 +34,13 @@ Student::Student(std::vector<std::string> rawInfo){
 	Student::address = Student::addressObject.Address::getAddress(); // get address var for humans
 
 	// each student object has 2 date objects
+	// dob date
 	Student::birthdayObject = Date::Date(rawInfo[7]); // give dob date object values
+	Student::dob = Student::birthdayObject.getDate(); // dob date for humans
+
+	// completion date
 	Student::completionObject = Date::Date(rawInfo[8]); // give completion date object values
-	Student::dob = Student::birthdayObject.Date::getDate(); // dob date for humans
-	Student::comp = Student::completionObject.Date::getDate();// get completion date for humans
+	Student::comp = Student::completionObject.getDate();// get completion date for humans
 
 
 

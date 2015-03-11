@@ -34,7 +34,6 @@ std::vector<string> 	myVector;
 
 
 
-
 /* main code */
 int main(){
 	file.open("data.dat"); // open file

@@ -24,10 +24,14 @@ private:
 	std::string gpa;
 	std::string credit_hours;
 
+std::vector<std::string> myDate;
+	std::string rawInfo;
+
 	std::string name;
 	std::string dob;
 	std::string comp;
 	std::string address;
+
 
 	Date birthdayObject;
 	Date completionObject;
@@ -37,20 +41,10 @@ public:
 
 	Student();
 	Student(std::vector<std::string> rawInfo);
-
-	std::string getDate();
-
-
-
-/*
-	Student(std::vector<std::string>);
-	// date and address instantiation
-	Date birthdayObject;
-	Date completionObject;
-	Address addressObject;
-
-*/
 	~Student();// destructor
+
+	// method decs
+	std::string getDate();
 	void displayNames();// public method declaration
 	void showReport();
 };// end student class
