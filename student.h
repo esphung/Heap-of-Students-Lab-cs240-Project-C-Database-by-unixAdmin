@@ -12,6 +12,8 @@
 #include <vector>
 class Student{
 private:
+	std::string last_name;
+	std::string first_name;
 	std::string first_address;
 	std::string second_address;
 	std::string city;
@@ -22,17 +24,21 @@ private:
 	std::string gpa;
 	std::string credit_hours;
 
+	std::string name;
+	std::string dob;
+	std::string comp;
+	std::string address;
 
-	//std::vector<std::string> myDate;
 	Date birthdayObject;
 	Date completionObject;
 	Address addressObject;
 
 public:
-	std::string last_name;
-	std::string first_name;
+
 	Student();
 	Student(std::vector<std::string> rawInfo);
+
+	std::string getDate();
 
 
 
@@ -46,6 +52,6 @@ public:
 */
 	~Student();// destructor
 	void displayNames();// public method declaration
-	void getReport();
+	void showReport();
 };// end student class
 #endif
