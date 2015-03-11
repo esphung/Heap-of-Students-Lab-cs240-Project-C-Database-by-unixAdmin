@@ -74,7 +74,7 @@ int main(){
 
 
 // function defs
-
+/*
 std::vector<std::string> getNamesAlphabetical(){
 	// for loop for sorting alphabetical
 	std::vector<std::string>   sortedNames;
@@ -89,7 +89,7 @@ std::vector<std::string> getNamesAlphabetical(){
 	} // end for sort print out
 	return sortedNames;
 } // end get names ALPHABETIZED!!! def
-
+*/
 
 
 std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
