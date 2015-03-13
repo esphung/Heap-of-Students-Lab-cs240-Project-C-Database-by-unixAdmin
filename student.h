@@ -12,7 +12,7 @@
 #include <vector>
 class Student{
 private:
-	std::string last_name;
+
 	std::string first_name;
 	std::string first_address;
 	std::string second_address;
@@ -38,7 +38,7 @@ std::vector<std::string> myDate;
 	Address addressObject;
 
 public:
-
+	std::string last_name;
 	Student();
 	Student(std::vector<std::string> rawInfo);
 	~Student();// destructor

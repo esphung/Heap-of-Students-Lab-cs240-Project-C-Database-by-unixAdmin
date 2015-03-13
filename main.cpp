@@ -17,7 +17,7 @@
 #include <string>
 using namespace std;
 // function prototypes
-//std::vector<std::string> getNamesAlphabetical();
+std::vector<std::string> getNamesAlphabetical();
 std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str);
 
 // global vars
@@ -26,8 +26,8 @@ std::stringstream 		sline;
 std::string 					var;
 std::ifstream 				file;
 std::vector<string> 	myVector;
-//std::vector<string> 	nameVector;
-//std::vector<Student> 	studentVector;
+std::vector<string> 	nameVector;
+std::vector<Student> 	studentVector;
 //std::vector<string> 	myLabels;
 
 
@@ -58,7 +58,7 @@ int main(){
 		newStudent[i].showReport(); // display simple report of new student object INCUDES DISPLAY DATE OBJECT METHOD
 		std::cout << "\t================" << std::endl;
 
-		//studentVector.push_back(newStudent[i]); // save student in vector for easy use later MAYBE blackbelt
+		studentVector.push_back(newStudent[i]); // save student in vector for easy use later MAYBE blackbelt
 
 		++i;
 
@@ -66,7 +66,7 @@ int main(){
 	file.close(); // close file
 
 
-	//getNamesAlphabetical(); // alphabetize names
+	getNamesAlphabetical(); // alphabetize names
 
 
 
@@ -80,7 +80,6 @@ int main(){
 
 
 // function defs
-/*
 std::vector<std::string> getNamesAlphabetical(){
 	// for loop for sorting alphabetical
 	std::vector<std::string>   sortedNames;
@@ -95,7 +94,6 @@ std::vector<std::string> getNamesAlphabetical(){
 	} // end for sort print out
 	return sortedNames;
 } // end get names ALPHABETIZED!!! def
-*/
 
 std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
 	std::vector<std::string>   result;
