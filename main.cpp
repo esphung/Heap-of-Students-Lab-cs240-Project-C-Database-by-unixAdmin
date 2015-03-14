@@ -10,7 +10,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
-#include <sort>
+#include <algorithm>
 
 #include "student.h"
 #include "date.h"
