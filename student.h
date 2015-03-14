@@ -27,7 +27,7 @@ private:
 std::vector<std::string> myDate;
 	std::string rawInfo;
 
-	std::string name;
+
 	std::string dob;
 	std::string comp;
 	std::string address;
@@ -38,6 +38,7 @@ std::vector<std::string> myDate;
 	Address addressObject;
 
 public:
+	std::string name;
 	std::string last_name;
 	Student();
 	Student(std::vector<std::string> rawInfo);

@@ -36,11 +36,11 @@ Student::Student(std::vector<std::string> rawInfo){
 	// each student object has 2 date objects
 	// dob date
 	Student::birthdayObject = Date::Date(rawInfo[7]); // give dob date object values
-	Student::dob = Student::birthdayObject.getDate(); // dob date for humans
+	//Student::dob = Student::birthdayObject.getDate(); // dob date for humans
 
 	// completion date
 	Student::completionObject = Date::Date(rawInfo[8]); // give completion date object values
-	Student::comp = Student::completionObject.getDate();// get completion date for humans
+	//Student::comp = Student::completionObject.getDate();// get completion date for humans
 
 
 
@@ -67,9 +67,9 @@ void Student::showReport(){
 	std::cout << "Grade:\t\t" << Student::gpa << std::endl;
 	std::cout << "Credit Hours:\t" << Student::credit_hours << std::endl;
 	std::cout << "Birthday:\t" << Student::dob << std::endl;
-	//birthdayObject.displayDate(); // call to display method (optional)
+	birthdayObject.displayDate(); // call to display method (optional)
 	std::cout << "Completion:\t" << Student::comp << std::endl;
-	//completionObject.displayDate(); // call to display method (optional)
+	completionObject.displayDate(); // call to display method (optional)
 
 } // end get report
 

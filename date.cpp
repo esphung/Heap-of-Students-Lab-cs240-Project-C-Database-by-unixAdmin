@@ -21,11 +21,8 @@ Date::Date(std::string rawInfo){
 	} // end while
 	Date::myDate.push_back(rawInfo); // get last token in line for back of vector
 
-
-
-
-
 }// end overload constructor
+
 Date::~Date(){
 }// end destructor
 

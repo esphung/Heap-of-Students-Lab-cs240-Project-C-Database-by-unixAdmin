@@ -18,6 +18,7 @@
 #include <string>
 using namespace std;
 // function prototypes
+void displayNames();
 std::vector<std::string> getNamesAlphabetical();
 std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str);
 
@@ -29,7 +30,7 @@ std::ifstream 				file;
 std::vector<string> 	myVector;
 std::vector<string> 	nameVector;
 std::vector<Student> 	studentVector;
-//std::vector<string> 	myLabels;
+std::vector<string> 	myLabels;
 
 
 
@@ -43,13 +44,13 @@ int main(){
 
 
 	int i = 0; // iterator for line count
-/*
+
 	// capture first line for labeling
 	do {
 	myLabels = getNextLineAndSplitIntoTokens(file); // labels for info human
 	break;
 	} while (i < 1); // end do while
-*/
+
 
 	// while loop iterate thru file
 	while (!file.eof()){
@@ -67,7 +68,8 @@ int main(){
 	file.close(); // close file
 
 
-	getNamesAlphabetical(); // alphabetize names
+	displayNames(); // simple name list
+	getNamesAlphabetical(); // show alphabetized names
 
 
 
@@ -110,4 +112,11 @@ std::vector<std::string> getNextLineAndSplitIntoTokens(std::istream& str){
 	return result;
 } // end getline and tokenize function def
 
+
+void displayNames(){
+	for (int i = 0; i < studentVector.size(); ++i){
+		std::cout << studentVector[i].name << std::endl;
+	} // end for print out
+	std::cout << "================" << std::endl;
+} // end display names function
 
