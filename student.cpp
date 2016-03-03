@@ -17,29 +17,29 @@ Student::Student(std::vector<std::string> rawInfo){
 	//std::cout << rawInfo.back() << std::endl;
 
 	// property assignments ('Type::var' = EXPLICIT > IMPLICIT)
-	Student::last_name = 					rawInfo[0];
-	Student::first_name = 				rawInfo[1];
-	Student::first_address = 			rawInfo[2];
-	Student::second_address = 		rawInfo[3];
-	Student::city = 							rawInfo[4];
-	Student::state = 							rawInfo[5];
-	Student::zipcode = 						rawInfo[6];
-	Student::gpa = 								rawInfo[9];
-	Student::credit_hours = 			rawInfo[10];
+	last_name = 					rawInfo[0];
+	first_name = 				rawInfo[1];
+	first_address = 			rawInfo[2];
+	second_address = 		rawInfo[3];
+	city = 							rawInfo[4];
+	state = 							rawInfo[5];
+	zipcode = 						rawInfo[6];
+	gpa = 								rawInfo[9];
+	credit_hours = 			rawInfo[10];
 
 	Student::name = Student::last_name + ", " + Student::first_name; // student name for humans DEBUG purposes
 
 	// Each Student object contains one address object
-	Student::addressObject = Address::Address(rawInfo[2],rawInfo[3],rawInfo[4],rawInfo[5],rawInfo[6]);
+	Student::addressObject = Address(rawInfo[2],rawInfo[3],rawInfo[4],rawInfo[5],rawInfo[6]);
 	Student::address = Student::addressObject.Address::getAddress(); // get address var for humans
 
 	// each student object has 2 date objects
 	// dob date
-	Student::birthdayObject = Date::Date(rawInfo[7]); // give dob date object values
+	Student::birthdayObject = Date(rawInfo[7]); // give dob date object values
 	//Student::dob = Student::birthdayObject.getDate(); // dob date for humans
 
 	// completion date
-	Student::completionObject = Date::Date(rawInfo[8]); // give completion date object values
+	Student::completionObject = Date(rawInfo[8]); // give completion date object values
 	//Student::comp = Student::completionObject.getDate();// get completion date for humans
 
 

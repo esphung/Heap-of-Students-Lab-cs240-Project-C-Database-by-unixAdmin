@@ -69,7 +69,7 @@ int main(){
 
 
 	displayNames(); // simple name list
-	getNamesAlphabetical(); // show alphabetized names
+	//getNamesAlphabetical(); // show alphabetized names
 
 
 
